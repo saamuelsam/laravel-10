@@ -12,8 +12,18 @@ class SupportController extends Controller
     {
 
         $supports = $support->all();
-        dd($supports);
-        
-        return view('/admin/supports/index');
+        /* dd($supports); */
+
+        return view('/admin/supports/index', compact('supports'));
+    }
+
+    public function create() 
+    {
+        return view('admin/supports/create');
+    }
+
+    public function store(Request $resquest) 
+    {
+        dd($resquest->all());
     }
 }

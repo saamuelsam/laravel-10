@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Route;// aqui definimimos as rotas
 |
 */
 
+//Rota que recebe o request do formulario
+Route::post('supports', [SupportController::class, 'store'])->name('supports.store');
+
+//Rota para exibir o formulario de cadastro
+Route::get('/supports/create', [SupportController::class, 'create'])->name('supports.create');
+
 //rota para a listagem do support
 Route::get('/supports', [SupportController::class, 'index'])->name('supports.index');
 
