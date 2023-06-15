@@ -1,4 +1,4 @@
- <h1>Detalhes da dúvida {{ $support->id }}</h1>
+ <h1>Detalhes da dúvida {{ $listagem }}</h1>
 
     <ul>
         <li>Assunto: {{ $support->subject }}</li>

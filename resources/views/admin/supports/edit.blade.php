@@ -1,4 +1,4 @@
-<h1>Dúvida {{ $support->id }}</h1>
+<h1>Dúvida {{ $listagem }}</h1>
 
 <form action="{{ route('supports.update', $support->id) }}" method="post">
     @method('PUT')

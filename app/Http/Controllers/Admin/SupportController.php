@@ -12,12 +12,12 @@ class SupportController extends Controller
     {
 
         $supports = $support->all();
-        /* dd($supports); */
+        
 
         return view('/admin/supports/index', compact('supports'));
     }
 
-    public function show(string|int $id)  //trabalhando com tipagem. E temos o id do suport que vai manipular
+    public function show(string|int $id, $listagem)  //trabalhando com tipagem. E temos o id do suport que vai manipular
     {
 
         /*
@@ -29,7 +29,7 @@ class SupportController extends Controller
         if(!$support = Support::find($id)){//recuperando o support pelo id. O metodo find recupera um item pelo id
            return back(); //se ainda não tiver o valor do id ele retorna para a view
         } 
-       return view('admin/supports/show', compact('support')); //retorna a view show  
+       return view('admin/supports/show', compact('support', 'listagem')); //retorna a view show  
     }
 
     public function create() 
@@ -47,14 +47,15 @@ class SupportController extends Controller
         return redirect()->route('supports.index'); //redireciona o usuario depois de enviar o formulario
     }
 
-    public function edit(Support $support, string|int $id)
+    public function edit(Support $support, string|int $id, $listagem)
      {
-        
         if(!$support = $support->where('id', $id)->first()){
-            return redirect()->back(); 
+            return redirect()->back();  
          } 
 
-         return view('admin/supports.edit', compact('support'));
+
+         return view('admin/supports.edit', compact('support', 'listagem'));
+
     }
 
     public function update(Request $resquest, $id)

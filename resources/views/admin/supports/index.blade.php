@@ -11,17 +11,18 @@
     </thead>
 
     <tbody>
-        @foreach($supports as $support)
+        @for($i = 0; $i <= count($supports)-1; $i++)
             <tr>
-                <td>{{ $support->subject }}</td>
-                <td>{{ $support->status }}</td>
-                <td>{{ $support->body }}</td>
+                <td>{{ $supports[$i]->subject}}</td>
+                <td>{{ $supports[$i]->status}}</td>
+                <td>{{ $supports[$i]->body }}</td>
                  <td>
-                    <a href="{{ route('supports.show', $support->id) }}">Ir</a>
-                    <a href="{{ route('supports.edit', $support->id )}}">Editar</a>
+                    <a href="{{ route('supports.show',['id' => $supports[$i]->id, 'listagem' => $i+1 ] )}}">Ir</a>
+x                    <a href="{{ route('supports.edit', ['id' => $supports[$i]->id, 'listagem' => $i+1 ])}}">Editar</a>
                 </td>
+
             </tr>
-        @endforeach
+        @endfor
     </tbody>
 </table>
 
