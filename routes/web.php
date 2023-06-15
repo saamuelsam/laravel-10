@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\Route;// aqui definimimos as rotas
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//Rota para exibir o formulario de cadastro
+Route::get('/supports/create', [SupportController::class, 'create'])->name('supports.create');
+
+Route::get('supports/{id}', [SupportController::class, 'show'])->name('supports.show');//recebe um parametro dinâmico o {id]
 
 //Rota que recebe o request do formulario
 Route::post('supports', [SupportController::class, 'store'])->name('supports.store');
-
-//Rota para exibir o formulario de cadastro
-Route::get('/supports/create', [SupportController::class, 'create'])->name('supports.create');
 
 //rota para a listagem do support
 Route::get('/supports', [SupportController::class, 'index'])->name('supports.index');

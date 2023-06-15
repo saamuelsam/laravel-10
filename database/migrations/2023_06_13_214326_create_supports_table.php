@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('supports', function (Blueprint $table) {
-            $table->id();
+            $table->id();//chave primaria
             $table->string('subject');//assunto
-            $table->enum('status', ['A', 'P', 'C']);//status
+            $table->enum('status', ['a', 'p', 'c']);//status
             $table->text('body');  //conteúdo
             $table->timestamps();
         });
