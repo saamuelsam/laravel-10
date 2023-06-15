@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;// aqui definimimos as rotas
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//Rota para edição de duvidas
+Route::get('/supports/{$id}/edit', [SupportController::class, 'edit'])->name('supports.edit');
+
 //Rota para exibir o formulario de cadastro
 Route::get('/supports/create', [SupportController::class, 'create'])->name('supports.create');
 

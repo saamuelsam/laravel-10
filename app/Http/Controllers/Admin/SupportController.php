@@ -46,4 +46,13 @@ class SupportController extends Controller
 
         return redirect()->route('supports.index'); //redireciona o usuario depois de enviar o formulario
     }
+
+    public function edit(Support $support, string|int $id)
+     {
+        if(!$support = $support->where('id', $id)->first()){
+            return back(); 
+         } 
+
+         return view('admin/supports/edit', compact('support'));
+    }
 }   
