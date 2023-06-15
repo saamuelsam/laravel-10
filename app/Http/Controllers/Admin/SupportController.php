@@ -49,10 +49,20 @@ class SupportController extends Controller
 
     public function edit(Support $support, string|int $id)
      {
+        
         if(!$support = $support->where('id', $id)->first()){
-            return back(); 
+            return redirect()->back(); 
          } 
 
          return view('admin/supports.edit', compact('support'));
     }
-}   
+
+    public function update(Request $resquest, $id)
+    {
+        $support = Support::find($id);
+        $supports = $resquest->only('subject', 'body');
+        $support->update($supports);
+
+        return redirect()->route('supports.index');
+    }
+}       
