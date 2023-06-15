@@ -53,6 +53,6 @@ class SupportController extends Controller
             return back(); 
          } 
 
-         return view('admin/supports/edit', compact('support'));
+         return view('admin/supports.edit', compact('support'));
     }
 }   
