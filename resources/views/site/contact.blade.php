@@ -1,1 +1,1 @@
-<h1>TESTE DE ROTAS</h1>
+<p style="font-size: 30px;">Olá esse é um teste para meu aprendizado com <strong style="color: red;">LARAVEL</strong></p>

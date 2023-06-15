@@ -9,7 +9,7 @@ class Support extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    protected $fillable = [ //mass assingnment
         'subject',
         'body',
         'status'
